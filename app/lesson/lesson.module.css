@@ -1,0 +1,411 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #e95a20;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
+
+.reportBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.reportBtn:hover {
+  color: #f59e0b;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+}
+
+.videoSection {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.video {
+  width: 100%;
+  border-radius: 12px;
+  background: #000;
+}
+
+.stepsList {
+  margin-top: 16px;
+}
+
+.stepItem {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+}
+
+.stepItem.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-left-color: #22c55e;
+}
+
+.stepItem.completed {
+  border-left-color: #22c55e;
+}
+
+.stepNumber {
+  background: rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.stepTitle {
+  font-weight: 600;
+  color: white;
+}
+
+.stepSubtitle {
+  font-size: 12px;
+  color: #cfcfcf;
+}
+
+.interactiveArea {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 600px;
+}
+
+.quizContainer {
+  display: none;
+}
+
+.quizContainer.active {
+  display: block;
+}
+
+.question {
+  font-size: 18px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+.option {
+  background: #ff6a2b;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: white;
+}
+
+.option:hover {
+  transform: translateX(4px);
+}
+
+.canvasContainer {
+  display: none;
+}
+
+.canvasContainer.active {
+  display: block;
+}
+
+.canvasIframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+}
+
+.codeEditor {
+  border: 1px solid rgba(255, 106, 43, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #1b1f5b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.editorTitle {
+  font-size: 12px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.instruction {
+  padding: 12px;
+  background: rgba(255, 106, 43, 0.06);
+  border-bottom: 1px solid rgba(255, 106, 43, 0.12);
+}
+
+.instructionTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e95a20;
+  margin: 0 0 4px 0;
+}
+
+.instructionText {
+  font-size: 14px;
+  color: #374151;
+  margin: 0;
+}
+
+.instructionHint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 4px 0 0 0;
+}
+
+.editorBody {
+  background: #0f1138;
+  position: relative;
+  min-height: 200px;
+}
+
+.lineNumbers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.lineNumbers span {
+  font-size: 12px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px 12px 12px 40px;
+  background: transparent;
+  color: #e2e8f0;
+  border: none;
+  outline: none;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.output {
+  padding: 12px;
+  min-height: 60px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.outputSuccess {
+  background: #0a1c0a;
+  border-top: 1px solid rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.outputError {
+  background: #1c0a0a;
+  border-top: 1px solid rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.editorFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #f5f5f5;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footerHint {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.runBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ff6a2b, #e95a20);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.runBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #2a2860;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modalContent h2 {
+  margin-bottom: 16px;
+  color: white;
+}
+
+.modalDescription {
+  color: #cfcfcf;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: white;
+}
+
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: inherit;
+}
+
+.formGroup textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.hint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btnPrimary {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #ff6a2b;
+  color: white;
+  flex: 1;
+}
+
+.btnSecondary {
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.successMessage {
+  background: #22c55e;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: white;
+}

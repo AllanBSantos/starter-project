@@ -1,0 +1,52 @@
+{
+  "name": "auto-quality-system",
+  "version": "1.0.0",
+  "description": "Sistema de qualidade automatizada para plataforma de ensino",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "next dev",
+    "dev:worker": "tsx watch src/workers/report.worker.ts",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:worker\"",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "migrate": "tsx src/db/migrate.ts",
+    "seed": "tsx src/db/seed.ts",
+    "lint": "eslint src --ext .ts"
+  },
+  "keywords": [
+    "quality",
+    "automation",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bull": "^4.12.0",
+    "dotenv": "^16.3.1",
+    "next": "^16.2.6",
+    "pg": "^8.11.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "redis": "^4.6.12",
+    "winston": "^3.11.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bull": "^4.10.0",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.6",
+    "@types/pg": "^8.10.9",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

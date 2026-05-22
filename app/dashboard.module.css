@@ -1,0 +1,135 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
+
+.lessonLink {
+  background: #ff6a2b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.lessonLink:hover {
+  background: #e95a20;
+}
+
+.error {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.tableContainer {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  color: #cfcfcf;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.table tbody td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.idCell {
+  font-family: monospace;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 106, 43, 0.2);
+  color: #ff6a2b;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.statuspending {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.statusprocessing {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.statusauto_resolved,
+.statusresolved {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.statusfailed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.description {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.date {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px !important;
+  color: #9ca3af;
+}
