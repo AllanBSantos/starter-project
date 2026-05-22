@@ -6,9 +6,9 @@ Sistema de qualidade automatizada para plataforma de ensino. Captura, processa e
 
 ## 📝 Para Candidatos
 
-**Se você está fazendo o teste técnico, leia primeiro o [TECHNICAL_TEST.md](./TECHNICAL_TEST.md)**
+**Se você está fazendo o teste técnico, leia primeiro o [TECHNICAL_TEST](https://docs.google.com/document/d/1GqZJDAvYrNF3HcIYobxz-z8RWTC6CeeTnz8RXaZy3WY/edit?usp=sharing)**
 
-Este README documenta o projeto base. O arquivo `TECHNICAL_TEST.md` contém:
+Este README documenta o projeto base. O arquivo `TECHNICAL_TEST` contém:
 - ✅ O que você precisa implementar
 - ✅ Casos de teste obrigatórios
 - ✅ Critérios de avaliação
