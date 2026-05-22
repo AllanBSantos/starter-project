@@ -53,8 +53,6 @@ self.addEventListener("message", async (event) => {
     self.postMessage({ type: "exec_start", id });
     const pyodide = await getPyodide();
 
-    self.postMessage({ type: "ready" });
-
     const wrappedCode = buildCode(code, stdin_mock);
 
     // Redirect stdout/stderr
@@ -99,9 +97,12 @@ sys.stderr = _stderr
 // Notify ready after first load
 (async () => {
   try {
+    console.log('[Pyodide Worker] Starting initialization...');
     await getPyodide();
+    console.log('[Pyodide Worker] Pyodide loaded successfully');
     self.postMessage({ type: "ready" });
   } catch (err) {
+    console.error('[Pyodide Worker] Init failed:', err);
     self.postMessage({ type: "init_error", message: err.message });
   }
 })();

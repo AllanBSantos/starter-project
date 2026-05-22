@@ -113,23 +113,41 @@ export default function LessonPage() {
   useEffect(() => {
     if (pyodideWorkerRef.current) return;
 
-    const worker = new Worker('/pyodide-worker.js');
-    pyodideWorkerRef.current = worker;
+    console.log('[Pyodide] Initializing worker...');
 
-    worker.addEventListener('message', (e) => {
-      const msg = e.data;
+    try {
+      const worker = new Worker('/pyodide-worker.js');
+      pyodideWorkerRef.current = worker;
 
-      if (msg.type === 'ready') {
-        setPyodideReady(true);
-      }
+      worker.addEventListener('message', (e) => {
+        const msg = e.data;
+        console.log('[Pyodide] Message received:', msg.type);
 
-      if (msg.type === 'result') {
-        handlePythonResult(msg);
-      }
-    });
+        if (msg.type === 'ready') {
+          console.log('[Pyodide] Worker ready!');
+          setPyodideReady(true);
+        }
+
+        if (msg.type === 'init_error') {
+          console.error('[Pyodide] Init error:', msg.message);
+        }
+
+        if (msg.type === 'result') {
+          handlePythonResult(msg);
+        }
+      });
+
+      worker.addEventListener('error', (e) => {
+        console.error('[Pyodide] Worker error:', e);
+      });
+    } catch (error) {
+      console.error('[Pyodide] Failed to create worker:', error);
+    }
 
     return () => {
-      worker.terminate();
+      if (pyodideWorkerRef.current) {
+        pyodideWorkerRef.current.terminate();
+      }
     };
   }, []);
 

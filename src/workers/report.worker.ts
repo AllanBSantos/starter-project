@@ -45,7 +45,7 @@ export async function processReport(job: Job<{ reportId: string }>) {
     //
     //   // Atualizar report com problem_type classificado
     //   report.problem_type = classification.problem_type;
-    //   // await ReportService.updateProblemType(reportId, classification.problem_type);
+    //   await ReportService.updateProblemType(reportId, classification.problem_type);
     // }
 
     // TODO: CANDIDATO - Implementar verificação de escalação antes de processar

@@ -88,6 +88,16 @@ export class ReportService {
   }
 
   /**
+   * Update report problem_type
+   * TODO: CANDIDATO - Usar após classificação automática
+   */
+  static async updateProblemType(id: string, problemType: string): Promise<void> {
+    const query = 'UPDATE reports SET problem_type = $1, updated_at = NOW() WHERE id = $2';
+    await pool.query(query, [problemType, id]);
+    logger.info(`Report ${id} problem_type updated to ${problemType}`);
+  }
+
+  /**
    * Update report with resolution result
    */
   static async updateResolution(

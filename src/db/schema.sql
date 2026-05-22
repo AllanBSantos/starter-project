@@ -5,7 +5,9 @@ CREATE TABLE IF NOT EXISTS reports (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   student_id UUID NOT NULL,
   lesson_id UUID NOT NULL,
-  problem_type VARCHAR(50) NOT NULL CHECK (problem_type IN ('video', 'subtitle', 'exercise', 'canvas', 'other')),
+  -- TODO: CANDIDATO - problem_type é nullable pois será classificado automaticamente
+  -- Se não for fornecido pelo frontend, o worker deve classificar usando ReportClassifier
+  problem_type VARCHAR(50) CHECK (problem_type IN ('video', 'subtitle', 'exercise', 'canvas', 'other')),
   description TEXT NOT NULL,
   metadata JSONB DEFAULT '{}',
   status VARCHAR(50) NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'processing', 'auto_resolved', 'escalated', 'failed')),
